@@ -8,13 +8,14 @@
 </form>
 @functions
 {
-public Func<string, Task> AddToDo { get; set; }
+    public Func<string, Task> AddToDo { get; set; }
 
-public string NewTodo = string.Empty;
+    public string NewTodo = string.Empty;
 
-public void AddItem()
-{
-    AddToDo(NewTodo);
-    NewTodo = "";
-}
+    public void AddItem()
+    {
+        NewTodo = $"New:{NewTodo}";
+        AddToDo(NewTodo);
+        NewTodo = "";
+    }
 }
