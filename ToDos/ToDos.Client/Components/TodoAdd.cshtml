@@ -1,0 +1,20 @@
+﻿@using ToDos.Shared
+
+<form class="form-inline">
+    <div class="form-group">
+        <input type="text" class="form-control"  @bind(NewTodo)>
+    </div>
+    <button class="btn btn-primary" @onclick(AddItem)>Add</button>
+</form>
+@functions
+{
+public Func<string, Task> AddToDo { get; set; }
+
+public string NewTodo = string.Empty;
+
+public void AddItem()
+{
+    AddToDo(NewTodo);
+    NewTodo = "";
+}
+}

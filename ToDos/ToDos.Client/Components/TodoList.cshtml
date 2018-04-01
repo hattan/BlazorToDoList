@@ -1,0 +1,34 @@
+﻿@using ToDos.Shared
+
+@if(Todos != null)
+{
+    <div class="col-xs-12 col-sm-6 todoContainer">
+        <div class="panel panel-default">
+            <ul class="list-group" id="contact-list">
+                @foreach (var todo in Todos)
+                {
+                    <li class="list-group-item todo-item" @onclick(()=>ClearItem(todo))>
+                        <div class="col-xs-12 col-sm-9">
+                            <span class="name">@todo.Name</span><br />
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+}
+
+@functions 
+{
+    public ICollection<Todo> Todos { get; set; }
+
+    public void ClearItem(Todo todo)
+    {
+        ClearToDo(todo.Id);
+    }
+
+    public Func<int, Task> ClearToDo { get; set; }
+    public Func<Task> OnLoad { get; set; }
+    protected override async Task OnInitAsync() => await OnLoad();
+}

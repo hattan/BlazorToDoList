@@ -1,0 +1,18 @@
+﻿@page "/todos"
+@inject AppState state
+
+<div id="todos">
+
+    <h1>Todo List</h1>
+
+    <TodoAdd AddToDo=state.AddTodo />
+
+    <TodoList OnLoad=state.FetchTodos
+              ClearToDo=state.ClearTodo
+              Todos=state.Todos />
+
+</div>
+
+@functions {
+    protected override void OnInit() => state.OnChange += StateHasChanged;
+}
