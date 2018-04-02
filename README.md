@@ -1,3 +1,3 @@
-# Blazor ToDo List
+# Blazor ToDo List2
 
 Simple Blazor ToDo List Demo 
