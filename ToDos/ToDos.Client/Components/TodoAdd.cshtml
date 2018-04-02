@@ -14,8 +14,16 @@
 
     public void AddItem()
     {
-        NewTodo = $"New:{NewTodo}";
+
+        NewTodo = GetCowText();
         AddToDo(NewTodo);
         NewTodo = "";
+    }
+
+    public string GetCowText()
+    {
+        string[] cowSayings = new[] { "mooo", "where's the milk?", "no farms!", "I love cheese!" };
+        var rand = new Random();
+        return cowSayings[rand.Next(cowSayings.Length)];
     }
 }

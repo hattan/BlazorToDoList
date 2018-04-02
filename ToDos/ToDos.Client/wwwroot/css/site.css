@@ -10,14 +10,7 @@
     color: white;
 }
 
-/* Keep the nav menu independent of scrolling and on top of other items */
-.main-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-}
+
 
 @media (max-width: 767px) {
     /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
@@ -95,17 +88,43 @@
     font-weight: bold;
 }
 
-#todos h1 {
-    color: #4189C7;
-    font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+#todos {
+    padding: 40px;
+    margin-top: 30px;
+    background-color: #EAA6E3;
+    width: 600px;
+    height: 400px;
+    border-radius: 10px;
 }
+    #todos h1 {
+        color: #74F70D;
+        font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+    }
 
 #todos .todoContainer{
     margin-top:20px;
     margin-left:-16px;
 }
 
-#todos .todo-item:hover {
-    background-color: #D4E6F1;
-    cursor:pointer;
+    #todos .todo-item:hover {
+        background-color: #F6E7F6;
+        cursor: pointer;
+    }
+
+body {
+    background-image: url(https://i.ytimg.com/vi/ljm6RU6lRuM/maxresdefault.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+.btn-primary {
+    background-color: #E7F90C;
+    color:red;
+    border-radius:80px;
+}
+
+
+    .btn-primary:hover {
+        background-color: #ABB621;
+        color: red;
+    }
